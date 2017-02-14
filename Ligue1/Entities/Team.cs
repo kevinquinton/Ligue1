@@ -1,7 +1,13 @@
 ﻿namespace Ligue1.Entities
 {
+    /// <summary>
+    /// Equipe
+    /// </summary>
     public class Team : EntityBase
     {
+        /// <summary>
+        /// Nom de l'équipe
+        /// </summary>
         private string _name;
 
         public Team() { }
@@ -10,11 +16,11 @@
         {
             get
             {
-                return this._name;
+                return _name;
             }
             set
             {
-                this._name = value;
+                _name = value;
             }
         }
 
