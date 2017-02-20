@@ -9,17 +9,37 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.Threading;
 
 namespace Ligue1.Activities
 {
-    [Activity(Label = "LoadingActivity", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Ligue1", MainLauncher = true, Icon = "@drawable/logo_ligue1")]
     public class LoadingActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            SetContentView (Resource.Layout.loading);
+            SetContentView(Resource.Layout.loading);
+
+            Thread thread = new Thread(new ThreadStart(ThreadLoop));
+            thread.Start();
+
+            // Passage à la page d'accueilµ
+            Intent mainActivity = new Intent(this, typeof(MainActivity));
+            StartActivity(mainActivity);
         }
+
+        /// <summary>
+        /// Gestion du thread
+        /// </summary>
+        private static void ThreadLoop()
+        {
+            while (Thread.CurrentThread.IsAlive)
+            {
+                Thread.Sleep(1000);
+            }
+        }
+
     }
 }

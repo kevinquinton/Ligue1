@@ -61,7 +61,10 @@ namespace Ligue1
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int logo_ligue1 = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int pelouse = 2130837505;
 			
 			static Drawable()
 			{
@@ -78,6 +81,9 @@ namespace Ligue1
 			
 			// aapt resource value: 0x7f030000
 			public const int loading = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int main = 2130903041;
 			
 			static Layout()
 			{
