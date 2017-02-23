@@ -13,7 +13,7 @@ using System.Threading;
 
 namespace Ligue1.Activities
 {
-    [Activity(Label = "Ligue1", MainLauncher = true, Icon = "@drawable/logo_ligue1")]
+    [Activity(Label = "Ligue1", MainLauncher = true, Icon = "@drawable/img_logo_ligue1")]
     public class LoadingActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -25,7 +25,7 @@ namespace Ligue1.Activities
             Thread thread = new Thread(new ThreadStart(ThreadLoop));
             thread.Start();
 
-            // Passage à la page d'accueilµ
+            // Passage à la page d'accueil
             Intent mainActivity = new Intent(this, typeof(MainActivity));
             StartActivity(mainActivity);
         }
@@ -37,7 +37,7 @@ namespace Ligue1.Activities
         {
             while (Thread.CurrentThread.IsAlive)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(1500);
             }
         }
 

@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -74,6 +74,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crosslight.Xamarin.Android.Support.v4.23.1.1\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crosslight.Xamarin.Android.Support.v7.AppCompat.23.1.1\lib\MonoAndroid10\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\LoadingActivity.cs" />
@@ -90,10 +98,10 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\loading.axml">
+    <AndroidResource Include="Resources\layout\main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\main.axml">
+    <AndroidResource Include="Resources\layout\loading.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -110,28 +118,28 @@
     <AndroidResource Include="Resources\values\theme.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\pelouse.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\img_pelouse.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\logo_ligue1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\img_logo_ligue1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-ldpi\pelouse.jpg" />
+    <AndroidResource Include="Resources\drawable-ldpi\img_pelouse.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-ldpi\logo_ligue1.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\img_logo_ligue1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\pelouse.jpg" />
+    <AndroidResource Include="Resources\drawable-mdpi\img_pelouse.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\logo_ligue1.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\img_logo_ligue1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\pelouse.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\img_pelouse.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\logo_ligue1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\img_logo_ligue1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
