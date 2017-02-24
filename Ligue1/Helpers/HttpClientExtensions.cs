@@ -1,5 +1,4 @@
 using System;
-
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net.Http;

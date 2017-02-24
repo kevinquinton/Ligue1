@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Android.App;
-using Android.Content;
-using Android.Provider;
 using Android.Views;
 using Android.Widget;
-using Java.Lang;
 using Ligue1.Models;
-using System.Collections;
 using Ligue1;
 
 /// <summary>
