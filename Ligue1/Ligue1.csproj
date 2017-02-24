@@ -16,8 +16,10 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -72,6 +74,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\monoandroid\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\monoandroid\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
@@ -84,13 +95,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\ScoreAdapter.cs" />
     <Compile Include="Activities\LoadingActivity.cs" />
-    <Compile Include="Activities\MainActivity.cs" />
-    <Compile Include="Entities\EntityBase.cs" />
-    <Compile Include="Entities\IEntity.cs" />
-    <Compile Include="Entities\Match.cs" />
-    <Compile Include="Entities\Result.cs" />
-    <Compile Include="Entities\Team.cs" />
+    <Compile Include="Activities\HomeActivity.cs" />
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Helpers\HttpClientExtensions.cs" />
+    <Compile Include="Models\FixturesRootObject.cs" />
+    <Compile Include="Models\HalfTime.cs" />
+    <Compile Include="Models\Score.cs" />
+    <Compile Include="Services\ICompetitionFixturesService.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\Impl\CompetitionFixturesService.cs" />
+    <Compile Include="Models\EntityBase.cs" />
+    <Compile Include="Models\IEntity.cs" />
+    <Compile Include="Models\Fixture.cs" />
+    <Compile Include="Models\Team.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -98,7 +117,7 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\main.axml">
+    <AndroidResource Include="Resources\layout\home.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\loading.axml">
@@ -111,9 +130,7 @@
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataAccess\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AndroidResource Include="Resources\values\theme.xml" />
   </ItemGroup>
@@ -141,7 +158,17 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\img_logo_ligue1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\score_item.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
 		<Target Name="BeforeBuild">

@@ -13,7 +13,8 @@ using System.Threading;
 
 namespace Ligue1.Activities
 {
-    [Activity(Label = "Ligue1", MainLauncher = true, Icon = "@drawable/img_logo_ligue1")]
+    //[Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/img_logo_ligue1")] // TODO A enlever
+    [Activity(Label = "@string/ApplicationName", Icon = "@drawable/img_logo_ligue1")]
     public class LoadingActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -26,8 +27,8 @@ namespace Ligue1.Activities
             thread.Start();
 
             // Passage à la page d'accueil
-            Intent mainActivity = new Intent(this, typeof(MainActivity));
-            StartActivity(mainActivity);
+            Intent homeActivity = new Intent(this, typeof(HomeActivity));
+            StartActivity(homeActivity);
         }
 
         /// <summary>

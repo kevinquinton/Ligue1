@@ -1,4 +1,4 @@
-﻿namespace Ligue1.Entities
+﻿namespace Ligue1.Models
 {
     public abstract class EntityBase : IEntity
     {
