@@ -10,13 +10,13 @@ namespace Ligue1.Activities
     /// </summary>
     //[Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/img_logo_ligue1")] // TODO A enlever
     [Activity(Label = "@string/ApplicationName", Icon = "@drawable/img_logo_ligue1")]
-    public class LoadingActivity : Activity
+    public class SplashScreenActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            SetContentView(Resource.Layout.loading);
+            SetContentView(Resource.Layout.splash_screen);
 
             // gestion du thread
             Thread thread = new Thread(new ThreadStart(ThreadLoop));

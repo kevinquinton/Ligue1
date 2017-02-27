@@ -21,9 +21,10 @@ namespace Ligue1.Models
         private HalfTime _halfTime;
 
         //TODO Delete
-        public Score(int goalsHomeTeam)
+        public Score(int goalsHomeTeam, int goalsAwayTeam)
         {
             _goalsHomeTeam = goalsHomeTeam;
+            _goalsAwayTeam = goalsAwayTeam;
         }
 
         public int GoalsHomeTeam

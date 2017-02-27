@@ -33,9 +33,10 @@ namespace Ligue1.Models
         private Score _result;
 
         // TODO Delete
-        public Fixture(string homeTeamName, Score result)
+        public Fixture(string homeTeamName, string awayTeamName, Score result)
         {
             _homeTeamName = homeTeamName;
+            _awayTeamName = awayTeamName;
             _result = result;
         }
 

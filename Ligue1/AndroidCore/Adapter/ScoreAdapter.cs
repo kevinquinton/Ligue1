@@ -58,6 +58,8 @@ public class ScoreAdapter : BaseAdapter
             holder = new ScoreViewHolder();
             holder.HomeTeamName = (TextView) view.FindViewById(Resource.Id.homeTeamNameTxt);
             holder.GoalsHomeTeam = (TextView) view.FindViewById(Resource.Id.goalsHomeTeamTxt);
+            holder.AwayTeamName = (TextView)view.FindViewById(Resource.Id.awayTeamNameTxt);
+            holder.GoalsAwayTeam = (TextView)view.FindViewById(Resource.Id.goalsAwayTeamTxt);
 
             view.Tag = holder;
         }
@@ -69,6 +71,8 @@ public class ScoreAdapter : BaseAdapter
         Fixture tempScoreItem = _fixtures[position];
         holder.HomeTeamName.Text = tempScoreItem.HomeTeamName;
         holder.GoalsHomeTeam.Text = tempScoreItem.Score.GoalsHomeTeam.ToString();
+        holder.AwayTeamName.Text = tempScoreItem.AwayTeamName;
+        holder.GoalsAwayTeam.Text = tempScoreItem.Score.GoalsAwayTeam.ToString();
 
         return view;
     }
@@ -77,5 +81,7 @@ public class ScoreAdapter : BaseAdapter
     {
         public TextView HomeTeamName { get; set; }
         public TextView GoalsHomeTeam { get; set; }
+        public TextView AwayTeamName { get; set; }
+        public TextView GoalsAwayTeam { get; set; }
     }
 }

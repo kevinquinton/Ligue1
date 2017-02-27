@@ -24,7 +24,7 @@ namespace Ligue1.Services.Impl
         public async Task<List<Fixture>> GetFixtures(string competitionId)
         {
             // TODO Rendre paramétrable numéro de la journée
-            var url = String.Format(GetUrl(), competitionId) + "?matchday=24";
+            var url = string.Format(GetUrl(), competitionId) + "?matchday=24";
 
             var result = await HttpClientExtensions.GetAsync<FixturesRootObject>(_httpClient, url);
 

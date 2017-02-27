@@ -15,8 +15,8 @@
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -67,7 +67,40 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
+    <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Core.4.4.0\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Core.4.4.0\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Core.4.4.0\lib\MonoAndroid\MvvmCross.Droid.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -95,32 +128,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapter\ScoreAdapter.cs" />
-    <Compile Include="Activities\LoadingActivity.cs" />
-    <Compile Include="Activities\HomeActivity.cs" />
-    <Compile Include="Constants\Constants.cs" />
-    <Compile Include="Helpers\HttpClientExtensions.cs" />
-    <Compile Include="Models\FixturesRootObject.cs" />
-    <Compile Include="Models\HalfTime.cs" />
-    <Compile Include="Models\Score.cs" />
-    <Compile Include="Services\ICompetitionFixturesService.cs" />
-    <Compile Include="Services\IService.cs" />
-    <Compile Include="Services\Impl\CompetitionFixturesService.cs" />
-    <Compile Include="Models\EntityBase.cs" />
-    <Compile Include="Models\IEntity.cs" />
-    <Compile Include="Models\Fixture.cs" />
-    <Compile Include="Models\Team.cs" />
+    <Compile Include="AndroidCore\Adapter\ScoreAdapter.cs" />
+    <Compile Include="Views\SplashScreenActivity.cs" />
+    <Compile Include="Views\HomeActivity.cs" />
+    <Compile Include="AndroidCore\Constants\Constants.cs" />
+    <Compile Include="AndroidCore\Helpers\HttpClientExtensions.cs" />
+    <Compile Include="AndroidCore\Entities\FixturesRootObject.cs" />
+    <Compile Include="AndroidCore\Entities\HalfTime.cs" />
+    <Compile Include="AndroidCore\Entities\Score.cs" />
+    <Compile Include="AndroidCore\Services\ICompetitionFixturesService.cs" />
+    <Compile Include="AndroidCore\Services\IService.cs" />
+    <Compile Include="AndroidCore\Services\Impl\CompetitionFixturesService.cs" />
+    <Compile Include="AndroidCore\Entities\EntityBase.cs" />
+    <Compile Include="AndroidCore\Entities\IEntity.cs" />
+    <Compile Include="AndroidCore\Entities\Fixture.cs" />
+    <Compile Include="AndroidCore\Entities\Team.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\home.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\loading.axml">
+    <AndroidResource Include="Resources\layout\splash_screen.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -130,7 +164,9 @@
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AndroidCore\ViewModels\" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\theme.xml" />
   </ItemGroup>
