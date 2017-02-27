@@ -1,5 +1,8 @@
 namespace Ligue1.Constants
 {
+    /// <summary>
+    /// Classe conteneur des constantes
+    /// </summary>
     public static class Constants
     {
         /// <summary>

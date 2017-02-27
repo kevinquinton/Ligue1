@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 
 namespace Ligue1.Models
 {
+    /// <summary>
+    /// Représente un objet JSON conteneur des fixtures
+    /// </summary>
     class FixturesRootObject
     {
         public List<object> html_attributions { get; set; }

@@ -6,13 +6,14 @@ using Ligue1.Models;
 
 namespace Ligue1.Activities
 {
+    /// <summary>
+    /// Activité de la page d'accueil
+    /// </summary>
     //[Activity(Label = "@string/ApplicationName")]
     [Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/img_logo_ligue1")] // TODO A enlever
     public class HomeActivity : Activity
     {
         private ListView scoresList;
-        private string[] items;
-        private ArrayAdapter<string> adapter;
         private ScoreAdapter scoreAdapter;
         private List<Fixture> fixtures;
 
@@ -23,14 +24,15 @@ namespace Ligue1.Activities
             SetContentView(Resource.Layout.home);
             scoresList = (ListView)FindViewById(Resource.Id.scoreView);
 
-            //items = new string[] { "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers" };
-            //adapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, items);
-
-            //scoresList.Adapter = adapter;
             fixtures = LoadData();
             scoreAdapter = new ScoreAdapter(this, fixtures);
+            scoresList.Adapter = scoreAdapter;
         }
 
+        /// <summary>
+        /// Chargement des données de résultats
+        /// </summary>
+        /// <returns>Liset de <seealso cref="Fixture"/></returns>
         private List<Fixture> LoadData()
         {
             // TODO Bouchons de données

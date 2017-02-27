@@ -5,8 +5,18 @@ using System.Net.Http;
 
 namespace Ligue1.Helpers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     static class HttpClientExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="client"></param>
+        /// <param name="url"></param>
+        /// <returns></returns>
         public static async Task<T> GetAsync<T>(this HttpClient client, string url)
         {
             var httpRequest = new HttpRequestMessage(new HttpMethod("GET"), url);

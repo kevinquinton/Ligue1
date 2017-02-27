@@ -10,18 +10,30 @@ using Ligue1;
 /// </summary>
 public class ScoreAdapter : BaseAdapter
 {
-    List<Fixture> _matchs;
-    Activity _activity;
+    /// <summary>
+    /// Liste de <seealso cref="Fixture"/>
+    /// </summary>
+    private List<Fixture> _fixtures;
 
-    public ScoreAdapter(Activity activity, List<Fixture> matchs)
+    /// <summary>
+    /// <seealso cref="Activity"/> courante
+    /// </summary>
+    private Activity _activity;
+
+    /// <summary>
+    /// Adapter custom permettant l'affichage d'une liste <seealso cref="Fixture"/>
+    /// </summary>
+    /// <param name="activity"><seealso cref="Activity"/></param>
+    /// <param name="fixtures"><seealso cref="Fixture"/></param>
+    public ScoreAdapter(Activity activity, List<Fixture> fixtures)
     {
         _activity = activity;
-        _matchs = matchs;
+        _fixtures = fixtures;
     }
 
     public override int Count
     {
-        get { return _matchs.Count; }
+        get { return _fixtures.Count; }
     }
 
     public override Java.Lang.Object GetItem(int position)
@@ -31,7 +43,7 @@ public class ScoreAdapter : BaseAdapter
 
     public override long GetItemId(int position)
     {
-        return _matchs[position].Id;
+        return _fixtures[position].Id;
     }
 
     public override View GetView(int position, View convertView, ViewGroup parent)
@@ -54,13 +66,9 @@ public class ScoreAdapter : BaseAdapter
             holder = view.Tag as ScoreViewHolder;
         }
 
-        //Now the holder holds reference to our view objects, whether they are 
-        //recycled or created new. 
-        //Next we need to populate the views
-
-        //var tempServiceItem = ServiceItems[position];
-        //holder.Name.Text = tempServiceItem.Name;
-        //holder.Category.Text = tempServiceItem.Category;
+        Fixture tempScoreItem = _fixtures[position];
+        holder.HomeTeamName.Text = tempScoreItem.HomeTeamName;
+        holder.GoalsHomeTeam.Text = tempScoreItem.Score.GoalsHomeTeam.ToString();
 
         return view;
     }
