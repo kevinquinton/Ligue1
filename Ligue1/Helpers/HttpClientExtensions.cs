@@ -11,12 +11,12 @@ namespace Ligue1.Helpers
     static class HttpClientExtensions
     {
         /// <summary>
-        /// 
+        /// Récupère une liste d'objets selon une requête exécutée en mode asynchrone
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="client"></param>
-        /// <param name="url"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">type de l'objet souhaité</typeparam>
+        /// <param name="client">client http</param>
+        /// <param name="url">url du web service</param>
+        /// <returns>Liste d'objets</returns>
         public static async Task<T> GetAsync<T>(this HttpClient client, string url)
         {
             var httpRequest = new HttpRequestMessage(new HttpMethod("GET"), url);
@@ -32,6 +32,13 @@ namespace Ligue1.Helpers
             return result;
         }
 
+        /// <summary>
+        /// Récupère en convertissant en chaine de caractères le JSON retourné
+        /// par l'exéc
+        /// </summary>
+        /// <param name="client">client http</param>
+        /// <param name="url">url du web service</param>
+        /// <returns>Chaine de caractères représentant le résultat de la requête</returns>
         public static async Task<string> GetStringAsync(this HttpClient client, string url)
         {
             var httpRequest = new HttpRequestMessage(new HttpMethod("GET"), url);

@@ -10,7 +10,7 @@ namespace Ligue1.Services
         /// Récupérer la liste de matchs d'une journée
         /// </summary>
         /// <param name="competitionId">Identifiant de la compétition</param>
-        /// <returns>Objet Fixture</returns>
+        /// <returns>Liste de <seealso cref="Fixture" /></returns>
         Task<List<Fixture>> GetFixtures(string competitionId);
     }
 }

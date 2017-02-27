@@ -91,5 +91,18 @@ namespace Ligue1.Models
             }
         }
 
+        public int Matchday
+        {
+            get
+            {
+                return _matchday;
+            }
+
+            set
+            {
+                _matchday = value;
+            }
+        }
+
     }
 }
