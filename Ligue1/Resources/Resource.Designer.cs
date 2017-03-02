@@ -1235,6 +1235,9 @@ namespace Ligue1
 			// aapt resource value: 0x7f07004a
 			public const int notification_subtext_size = 2131165258;
 			
+			// aapt resource value: 0x7f07004b
+			public const int score_item_size = 2131165259;
+			
 			static Dimension()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -2026,6 +2029,9 @@ namespace Ligue1
 			// aapt resource value: 0x7f050012
 			public const int abc_toolbar_collapse_description = 2131034130;
 			
+			// aapt resource value: 0x7f050016
+			public const int separator = 2131034134;
+			
 			// aapt resource value: 0x7f050013
 			public const int status_bar_notification_info_overflow = 2131034131;
 			
@@ -2546,6 +2552,9 @@ namespace Ligue1
 			// aapt resource value: 0x7f08002e
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131230766;
 			
+			// aapt resource value: 0x7f080133
+			public const int ScoreItemStyle = 2131231027;
+			
 			// aapt resource value: 0x7f0800ad
 			public const int TextAppearance_AppCompat = 2131230893;
 			
@@ -2744,8 +2753,8 @@ namespace Ligue1
 			// aapt resource value: 0x7f0800e9
 			public const int Theme_AppCompat_NoActionBar = 2131230953;
 			
-			// aapt resource value: 0x7f080133
-			public const int Theme_Custom = 2131231027;
+			// aapt resource value: 0x7f080134
+			public const int Theme_Custom = 2131231028;
 			
 			// aapt resource value: 0x7f0800ea
 			public const int ThemeOverlay_AppCompat = 2131230954;

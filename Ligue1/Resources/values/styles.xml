@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!-- Style pour un item de la liste des fixtures -->
+  <style name="ScoreItemStyle">
+    <item name="android:textSize">@dimen/score_item_size</item>
+  </style>
+</resources>

@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/derniersResultatsLabel"
         android:textColor="@android:color/black"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_marginTop="15dp" />
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"

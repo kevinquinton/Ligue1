@@ -33,7 +33,7 @@ namespace Ligue1.Activities
 
             SetContentView(Resource.Layout.home);
             scoresList = (ListView)FindViewById(Resource.Id.scoreView);
-
+            
             if (httpClient == null)
             {
                 httpClient = new HttpClient();
