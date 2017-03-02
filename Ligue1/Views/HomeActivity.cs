@@ -7,6 +7,8 @@ using Ligue1.Services.Impl;
 using System.Net.Http;
 using Ligue1.Services;
 using System.Threading.Tasks;
+using Android.Util;
+using Ligue1.AndroidCore.Services;
 
 namespace Ligue1.Activities
 {
@@ -21,7 +23,9 @@ namespace Ligue1.Activities
         private ScoreAdapter scoreAdapter;
         private List<Fixture> fixtures;
         private ICompetitionFixturesService service;
+        private ICompetitionFixturesServiceMocker serviceMock;
         private HttpClient httpClient;
+        private const string TAG = "HomeActivity";
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,41 +34,45 @@ namespace Ligue1.Activities
             SetContentView(Resource.Layout.home);
             scoresList = (ListView)FindViewById(Resource.Id.scoreView);
 
-            // instanciation du service responsable des fixtures
             if (httpClient == null)
             {
                 httpClient = new HttpClient();
             }
-            if (service == null)
-            {
-                service = new CompetitionFixturesService(httpClient);
-            }
 
-            fixtures = LoadData();
+            // instanciation du service responsable des fixtures
+            service = CompetitionFixturesService.CompetitionFixturesServiceSession(httpClient);
+            serviceMock = CompetitionFixturesServiceMocker.CompetitionFixturesServiceMockerSession(this);
+
+            bool debug = true;
+            fixtures = LoadLastResults(debug);
+
             scoreAdapter = new ScoreAdapter(this, fixtures);
             scoresList.Adapter = scoreAdapter;
         }
 
         /// <summary>
-        /// Chargement des données de résultats
+        /// Chargement des derniers résultats
         /// </summary>
         /// <returns>Liset de <seealso cref="Fixture"/></returns>
-        private List<Fixture> LoadData()
+        private List<Fixture> LoadLastResults(bool debug)
         {
+            Log.Info(TAG, "LoadLastResults");
+
             List<Fixture> result = new List<Fixture>();
 
-            // TODO Bouchons de données
-            //Score s1 = new Score(4, 0);
-            //Fixture f1 = new Fixture("Paris", "Barcelone", s1);
-            //result.Add(f1);
-
             // récupération des résultats avec web-service
-            Task<List<Fixture>> fixtures = service.GetFixtures(Constants.Constants.COMPETITION_ID_TEST);
-            result = fixtures.Result;
+            if (debug)
+            {
+                result = serviceMock.GetFixtures();
+            }
+            else
+            {
+                Task<List<Fixture>> fixtures = service.GetFixturesAsync(Constants.Constants.COMPETITION_ID_TEST);
+                result = fixtures.Result;
+            }
 
             return result;
         }
 
-        
     }
 }

@@ -3,7 +3,7 @@
     /// <summary>
     /// Equipe
     /// </summary>
-    public class Team : EntityBase
+    public class Team
     {
         /// <summary>
         /// Nom de l'équipe

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 /// <summary>
 /// Représente une rencontre de championnat
 /// </summary>
 namespace Ligue1.Models
 {
-    public class Fixture : EntityBase
+    public class Fixture
     {
         /// <summary>
         /// Nom de l'équipe jouant à domicile
@@ -31,14 +32,6 @@ namespace Ligue1.Models
         /// Résultat de la rencontre
         /// </summary>
         private Score _result;
-
-        // TODO Delete
-        public Fixture(string homeTeamName, string awayTeamName, Score result)
-        {
-            _homeTeamName = homeTeamName;
-            _awayTeamName = awayTeamName;
-            _result = result;
-        }
 
         public string HomeTeamName
         {
@@ -79,6 +72,7 @@ namespace Ligue1.Models
             }
         }
 
+        [JsonProperty(PropertyName = "result")]
         public Score Score
         {
             get

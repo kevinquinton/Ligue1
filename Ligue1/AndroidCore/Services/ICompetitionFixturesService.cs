@@ -11,6 +11,6 @@ namespace Ligue1.Services
         /// </summary>
         /// <param name="competitionId">Identifiant de la compétition</param>
         /// <returns>Liste de <seealso cref="Fixture" /></returns>
-        Task<List<Fixture>> GetFixtures(string competitionId);
+        Task<List<Fixture>> GetFixturesAsync(string competitionId);
     }
 }

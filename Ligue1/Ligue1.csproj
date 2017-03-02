@@ -129,6 +129,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidCore\Adapter\ScoreAdapter.cs" />
+    <Compile Include="AndroidCore\Services\ICompetitionFixturesServiceMocker.cs" />
+    <Compile Include="AndroidCore\Services\Mock\CompetitionFixturesServiceMocker.cs" />
     <Compile Include="Views\SplashScreenActivity.cs" />
     <Compile Include="Views\HomeActivity.cs" />
     <Compile Include="AndroidCore\Constants\Constants.cs" />
@@ -139,8 +141,6 @@
     <Compile Include="AndroidCore\Services\ICompetitionFixturesService.cs" />
     <Compile Include="AndroidCore\Services\IService.cs" />
     <Compile Include="AndroidCore\Services\Impl\CompetitionFixturesService.cs" />
-    <Compile Include="AndroidCore\Entities\EntityBase.cs" />
-    <Compile Include="AndroidCore\Entities\IEntity.cs" />
     <Compile Include="AndroidCore\Entities\Fixture.cs" />
     <Compile Include="AndroidCore\Entities\Team.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <AndroidAsset Include="Assets\fixtures.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />

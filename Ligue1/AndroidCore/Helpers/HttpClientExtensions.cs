@@ -2,13 +2,15 @@ using System;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net.Http;
+using Ligue1.Models;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using System.Net;
+using System.IO;
 
 namespace Ligue1.Helpers
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    static class HttpClientExtensions
+    public static class HttpClientExtensions
     {
         /// <summary>
         /// Récupère une liste d'objets selon une requête exécutée en mode asynchrone
@@ -49,5 +51,61 @@ namespace Ligue1.Helpers
 
             return jsonString;
         }
+
+        public static async Task<string> MakeGetRequest(string url)
+        {
+            var request = HttpWebRequest.Create(url);
+
+            try
+            {
+                HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse;
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var content = reader.ReadToEnd();
+                        if (string.IsNullOrWhiteSpace(content))
+                        {
+                            return response.StatusCode + "Response contained an empty body...";
+                        }
+                        else
+                        {
+                            return content;
+                        }
+                    }
+                }
+                else
+                {
+                    return response.StatusCode.ToString();
+                }
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            //HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse;
+
+            //if (response.StatusCode == HttpStatusCode.OK)
+            //{
+            //    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            //    {
+            //        var content = reader.ReadToEnd();
+            //        if (string.IsNullOrWhiteSpace(content))
+            //        {
+            //            return response.StatusCode + "Response contained an empty body...";
+            //        }
+            //        else
+            //        {
+            //            return content;
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    return response.StatusCode.ToString();
+            //}
+        }
+
     }
 }

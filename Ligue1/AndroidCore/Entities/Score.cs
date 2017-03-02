@@ -8,26 +8,19 @@ namespace Ligue1.Models
         /// <summary>
         /// Nombre de buts marqués par l'équipe jouant à domicile
         /// </summary>
-        private int _goalsHomeTeam;
+        private string _goalsHomeTeam;
 
         /// <summary>
         /// Nombre de buts marqués par l'équipe jouant à l'extérieur
         /// </summary>
-        private int _goalsAwayTeam;
+        private string _goalsAwayTeam;
 
         /// <summary>
         /// Score à la mi-temps
         /// </summary>
         private HalfTime _halfTime;
 
-        //TODO Delete
-        public Score(int goalsHomeTeam, int goalsAwayTeam)
-        {
-            _goalsHomeTeam = goalsHomeTeam;
-            _goalsAwayTeam = goalsAwayTeam;
-        }
-
-        public int GoalsHomeTeam
+        public string GoalsHomeTeam
         {
             get
             {
@@ -40,7 +33,7 @@ namespace Ligue1.Models
             }
         }
 
-        public int GoalsAwayTeam
+        public string GoalsAwayTeam
         {
             get
             {

@@ -13,7 +13,7 @@ namespace Ligue1.Constants
         /// <summary>
         /// Url des competions
         /// </summary>
-        public const string URL_WEB_SERVICE_COMPETITIONS_FIXTURES = URL_WEB_SERVICE + "competitions /{0}/fixtures";
+        public const string URL_WEB_SERVICE_COMPETITIONS_FIXTURES = URL_WEB_SERVICE + "competitions/{0}/fixtures";
 
         // TODO TO DELETE
         public const string COMPETITION_ID_TEST = "434";

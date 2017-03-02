@@ -4,6 +4,7 @@ using Android.Views;
 using Android.Widget;
 using Ligue1.Models;
 using Ligue1;
+using System;
 
 /// <summary>
 /// Custom adapter to show score
@@ -41,11 +42,6 @@ public class ScoreAdapter : BaseAdapter
         return null;
     }
 
-    public override long GetItemId(int position)
-    {
-        return _fixtures[position].Id;
-    }
-
     public override View GetView(int position, View convertView, ViewGroup parent)
     {
         ScoreViewHolder holder = null;
@@ -70,11 +66,18 @@ public class ScoreAdapter : BaseAdapter
 
         Fixture tempScoreItem = _fixtures[position];
         holder.HomeTeamName.Text = tempScoreItem.HomeTeamName;
-        holder.GoalsHomeTeam.Text = tempScoreItem.Score.GoalsHomeTeam.ToString();
         holder.AwayTeamName.Text = tempScoreItem.AwayTeamName;
-        holder.GoalsAwayTeam.Text = tempScoreItem.Score.GoalsAwayTeam.ToString();
+
+        // TODO Gestion des matchs annulés (voir avec un ViewModel)
+        holder.GoalsHomeTeam.Text = tempScoreItem.Score.GoalsHomeTeam;
+        holder.GoalsAwayTeam.Text = tempScoreItem.Score.GoalsAwayTeam;
 
         return view;
+    }
+
+    public override long GetItemId(int position)
+    {
+        return 0;
     }
 
     private class ScoreViewHolder : Java.Lang.Object
