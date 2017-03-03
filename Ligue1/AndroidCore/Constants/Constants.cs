@@ -18,5 +18,10 @@ namespace Ligue1.Constants
         // TODO TO DELETE
         public const string COMPETITION_ID_TEST = "434";
 
+        /// <summary>
+        /// Durée du thread de l'écran de chargement
+        /// </summary>
+        public const int SPLASH_DURATION = 3000;
+
     }
 }

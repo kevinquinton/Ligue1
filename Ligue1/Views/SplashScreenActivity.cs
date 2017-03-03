@@ -34,7 +34,7 @@ namespace Ligue1.Activities
         {
             while (Thread.CurrentThread.IsAlive)
             {
-                Thread.Sleep(1500);
+                Thread.Sleep(Constants.Constants.SPLASH_DURATION);
             }
         }
 

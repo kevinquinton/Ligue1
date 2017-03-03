@@ -3,37 +3,43 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_vertical|center_horizontal"
-    android:id="@+id/scoreListLayout" >
+    android:id="@+id/scoreListLayout"
+    android:weightSum="1">
   <TextView
       android:id="@+id/homeTeamNameTxt"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:gravity="right"
+      android:layout_weight="0.35"
       android:textAppearance="@style/ScoreItemStyle"
-      android:layout_marginLeft="5dp"
       android:textSize="@dimen/score_item_size" />
   <TextView
       android:id="@+id/goalsHomeTeamTxt"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:textAppearance="@style/ScoreItemStyle"
-      android:layout_marginLeft="10dp" />
+      android:gravity="center"
+      android:layout_weight="0.05"
+      android:textAppearance="@style/ScoreItemStyle" />
   <TextView
       android:id="@+id/scoreSeparatorTxt"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:textAppearance="?android:attr/textAppearanceLarge"
-      android:layout_marginLeft="5dp"
-      android:text="@string/separator"/> 
+      android:gravity="center"
+      android:layout_weight="0.05"
+      android:textAppearance="@style/ScoreItemStyle"
+      android:text="@string/separator" />
   <TextView
       android:id="@+id/goalsAwayTeamTxt"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:textAppearance="@style/ScoreItemStyle"
-      android:layout_marginLeft="5dp" />
+      android:gravity="center"
+      android:layout_weight="0.05"
+      android:textAppearance="@style/ScoreItemStyle" />
   <TextView
       android:id="@+id/awayTeamNameTxt"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:textAppearance="@style/ScoreItemStyle"
-      android:layout_marginLeft="5dp" />
+      android:gravity="left"
+      android:layout_weight="0.35"
+      android:textAppearance="@style/ScoreItemStyle" />
 </LinearLayout>
