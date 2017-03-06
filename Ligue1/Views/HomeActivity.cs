@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using Android.App;
 using Android.OS;
 using Android.Widget;
-using Ligue1.Models;
-using Ligue1.Services.Impl;
+using Ligue1.AndroidCore.Entities;
+using Ligue1.AndroidCore.Services.Impl;
 using System.Net.Http;
-using Ligue1.Services;
+using Ligue1.AndroidCore.Services;
 using System.Threading.Tasks;
 using Android.Util;
-using Ligue1.AndroidCore.Services;
+using Ligue1.AndroidCore.Constants;
 
 namespace Ligue1.Activities
 {
@@ -67,7 +67,7 @@ namespace Ligue1.Activities
             }
             else
             {
-                Task<List<Fixture>> fixtures = service.GetFixturesAsync(Constants.Constants.COMPETITION_ID_TEST);
+                Task<List<Fixture>> fixtures = service.GetFixturesAsync(Url.COMPETITION_ID_TEST);
                 result = fixtures.Result;
             }
 

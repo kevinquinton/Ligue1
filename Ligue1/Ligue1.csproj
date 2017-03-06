@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidCore\Adapter\ScoreAdapter.cs" />
+    <Compile Include="AndroidCore\Constants\Url.cs" />
     <Compile Include="AndroidCore\Services\ICompetitionFixturesServiceMocker.cs" />
     <Compile Include="AndroidCore\Services\Mock\CompetitionFixturesServiceMocker.cs" />
     <Compile Include="Views\SplashScreenActivity.cs" />

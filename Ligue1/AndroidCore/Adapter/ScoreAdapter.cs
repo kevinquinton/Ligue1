@@ -2,9 +2,8 @@
 using Android.App;
 using Android.Views;
 using Android.Widget;
-using Ligue1.Models;
+using Ligue1.AndroidCore.Entities;
 using Ligue1;
-using System;
 
 /// <summary>
 /// Custom adapter to show score

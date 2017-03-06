@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using Android.App;
-using Ligue1.Models;
+using Ligue1.AndroidCore.Entities;
 using Android.Content.Res;
 using System.IO;
 using Newtonsoft.Json;
-using Ligue1.Services.Impl;
 using Android.Util;
 
 namespace Ligue1.AndroidCore.Services

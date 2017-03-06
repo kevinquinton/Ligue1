@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Ligue1.Models
+namespace Ligue1.AndroidCore.Entities
 {
     /// <summary>
     /// Représente un objet JSON conteneur des fixtures

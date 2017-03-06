@@ -4,7 +4,7 @@ using System;
 /// <summary>
 /// Représente une rencontre de championnat
 /// </summary>
-namespace Ligue1.Models
+namespace Ligue1.AndroidCore.Entities
 {
     public class Fixture
     {

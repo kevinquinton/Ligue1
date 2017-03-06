@@ -1,12 +1,12 @@
-using Ligue1.Models;
+using Ligue1.AndroidCore.Entities;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Collections.Generic;
-using Ligue1.Helpers;
+using Ligue1.AndroidCore.Helpers;
 using System;
 using Android.Util;
 
-namespace Ligue1.Services.Impl
+namespace Ligue1.AndroidCore.Services.Impl
 {
     class CompetitionFixturesService : ICompetitionFixturesService
     {
@@ -62,7 +62,7 @@ namespace Ligue1.Services.Impl
 
         public string GetUrl()
         {
-            return Constants.Constants.URL_WEB_SERVICE_COMPETITIONS_FIXTURES;
+            return Constants.Url.URL_WEB_SERVICE_COMPETITIONS_FIXTURES;
         }
 
     }

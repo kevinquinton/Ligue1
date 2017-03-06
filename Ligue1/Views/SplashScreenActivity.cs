@@ -1,6 +1,7 @@
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Ligue1.AndroidCore.Constants;
 using System.Threading;
 
 namespace Ligue1.Activities
@@ -34,7 +35,7 @@ namespace Ligue1.Activities
         {
             while (Thread.CurrentThread.IsAlive)
             {
-                Thread.Sleep(Constants.Constants.SPLASH_DURATION);
+                Thread.Sleep(Constants.SPLASH_DURATION);
             }
         }
 

@@ -1,27 +1,13 @@
-namespace Ligue1.Constants
+namespace Ligue1.AndroidCore.Constants
 {
     /// <summary>
-    /// Classe conteneur des constantes
+    /// Classe conteneur des constantes de l'application
     /// </summary>
     public static class Constants
     {
         /// <summary>
-        /// Url du web-service
-        /// </summary>
-        public const string URL_WEB_SERVICE = "http://api.football-data.org/v1/";
-
-        /// <summary>
-        /// Url des competions
-        /// </summary>
-        public const string URL_WEB_SERVICE_COMPETITIONS_FIXTURES = URL_WEB_SERVICE + "competitions/{0}/fixtures";
-
-        // TODO TO DELETE
-        public const string COMPETITION_ID_TEST = "434";
-
-        /// <summary>
         /// Durée du thread de l'écran de chargement
         /// </summary>
         public const int SPLASH_DURATION = 3000;
-
     }
 }

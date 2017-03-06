@@ -1,4 +1,4 @@
-namespace Ligue1.Services
+namespace Ligue1.AndroidCore.Services
 {
     interface IService
     {

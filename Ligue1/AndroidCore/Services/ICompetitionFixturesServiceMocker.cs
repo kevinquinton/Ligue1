@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using Ligue1.Models;
+using Ligue1.AndroidCore.Entities;
 
 namespace Ligue1.AndroidCore.Services
 {

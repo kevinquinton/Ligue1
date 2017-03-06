@@ -2,13 +2,10 @@ using System;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net.Http;
-using Ligue1.Models;
-using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
 using System.Net;
 using System.IO;
 
-namespace Ligue1.Helpers
+namespace Ligue1.AndroidCore.Helpers
 {
     public static class HttpClientExtensions
     {
