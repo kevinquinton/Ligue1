@@ -51,7 +51,7 @@ namespace Ligue1.AndroidCore.Services
         /// <returns></returns>
         public List<Fixture> GetFixtures()
         {
-            Log.Info(TAG, "GetFixtures");
+            Log.Debug(TAG, "GetFixtures");
 
             List<Fixture> result = new List<Fixture>();
 

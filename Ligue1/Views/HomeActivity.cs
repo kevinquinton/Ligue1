@@ -27,13 +27,13 @@ namespace Ligue1.Activities
         private HttpClient httpClient;
         private const string TAG = "HomeActivity";
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.home);
             scoresList = (ListView)FindViewById(Resource.Id.scoreView);
-            
+
             if (httpClient == null)
             {
                 httpClient = new HttpClient();
@@ -43,8 +43,8 @@ namespace Ligue1.Activities
             service = CompetitionFixturesService.CompetitionFixturesServiceSession(httpClient);
             serviceMock = CompetitionFixturesServiceMocker.CompetitionFixturesServiceMockerSession(this);
 
-            bool debug = true;
-            fixtures = LoadLastResults(debug);
+            bool debug = false;
+            fixtures = await LoadLastResults(debug);
 
             scoreAdapter = new ScoreAdapter(this, fixtures);
             scoresList.Adapter = scoreAdapter;
@@ -54,9 +54,9 @@ namespace Ligue1.Activities
         /// Chargement des derniers résultats
         /// </summary>
         /// <returns>Liset de <seealso cref="Fixture"/></returns>
-        private List<Fixture> LoadLastResults(bool debug)
+        private async Task<List<Fixture>> LoadLastResults(bool debug)
         {
-            Log.Info(TAG, "LoadLastResults");
+            Log.Debug(TAG, "LoadLastResults");
 
             List<Fixture> result = new List<Fixture>();
 
@@ -67,8 +67,8 @@ namespace Ligue1.Activities
             }
             else
             {
-                Task<List<Fixture>> fixtures = service.GetFixturesAsync(Url.COMPETITION_ID_TEST);
-                result = fixtures.Result;
+                var fixtures = await service.GetFixturesAsync(Url.COMPETITION_ID_TEST);
+                result = fixtures;
             }
 
             return result;

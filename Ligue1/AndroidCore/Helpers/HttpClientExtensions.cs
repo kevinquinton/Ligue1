@@ -2,8 +2,6 @@ using System;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net.Http;
-using System.Net;
-using System.IO;
 
 namespace Ligue1.AndroidCore.Helpers
 {
@@ -22,9 +20,25 @@ namespace Ligue1.AndroidCore.Helpers
 
             client.Timeout = TimeSpan.FromSeconds(30);
 
-            var response = await client.SendAsync(httpRequest);
+            //var response = await client.SendAsync(httpRequest);
 
-            var jsonString = await response.Content.ReadAsStringAsync();
+            //var jsonString = await response.Content.ReadAsStringAsync();
+
+            //var result = JsonConvert.DeserializeObject<T>(jsonString);
+
+            //return result;
+            var response = new HttpResponseMessage();
+            var jsonString = "";
+
+            Console.WriteLine("avant response");
+            response = await client.SendAsync(httpRequest);
+            Console.WriteLine("après response");
+            jsonString = await response.Content.ReadAsStringAsync();
+            Console.WriteLine("après jsonstring");
+ 
+            response = await client.SendAsync(httpRequest);
+
+            jsonString = await response.Content.ReadAsStringAsync();
 
             var result = JsonConvert.DeserializeObject<T>(jsonString);
 
@@ -47,61 +61,6 @@ namespace Ligue1.AndroidCore.Helpers
             var jsonString = await response.Content.ReadAsStringAsync();
 
             return jsonString;
-        }
-
-        public static async Task<string> MakeGetRequest(string url)
-        {
-            var request = HttpWebRequest.Create(url);
-
-            try
-            {
-                HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse;
-
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                    {
-                        var content = reader.ReadToEnd();
-                        if (string.IsNullOrWhiteSpace(content))
-                        {
-                            return response.StatusCode + "Response contained an empty body...";
-                        }
-                        else
-                        {
-                            return content;
-                        }
-                    }
-                }
-                else
-                {
-                    return response.StatusCode.ToString();
-                }
-            }
-            catch(Exception e)
-            {
-                throw e;
-            }
-            //HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse;
-
-            //if (response.StatusCode == HttpStatusCode.OK)
-            //{
-            //    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-            //    {
-            //        var content = reader.ReadToEnd();
-            //        if (string.IsNullOrWhiteSpace(content))
-            //        {
-            //            return response.StatusCode + "Response contained an empty body...";
-            //        }
-            //        else
-            //        {
-            //            return content;
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    return response.StatusCode.ToString();
-            //}
         }
 
     }

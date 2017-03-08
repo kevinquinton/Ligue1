@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Collections.Generic;
 using Ligue1.AndroidCore.Helpers;
-using System;
 using Android.Util;
 
 namespace Ligue1.AndroidCore.Services.Impl
@@ -41,19 +40,10 @@ namespace Ligue1.AndroidCore.Services.Impl
         /// <returns>Liste de fixtures</returns>
         public async Task<List<Fixture>> GetFixturesAsync(string competitionId)
         {
-            Log.Info(TAG, "GetFixturesAsync");
+            Log.Debug(TAG, "GetFixturesAsync");
 
             // TODO Rendre paramétrable numéro de la journée
             var url = string.Format(GetUrl(), competitionId) + "?matchday=24";
-
-            try
-            {
-                await HttpClientExtensions.MakeGetRequest(url);
-            }
-            catch(System.Exception e)
-            {
-                Console.Write(e.ToString());
-            }
 
             var result = await HttpClientExtensions.GetAsync<FixturesRootObject>(_httpClient, url);
 
