@@ -44,7 +44,7 @@ namespace Ligue1.Activities
             serviceMock = CompetitionFixturesServiceMocker.CompetitionFixturesServiceMockerSession(this);
 
             bool debug = true;
-            fixtures = await LoadLastResults(debug);
+            fixtures = await LoadLastFixtures(debug);
 
             scoreAdapter = new ScoreAdapter(this, fixtures);
             scoresList.Adapter = scoreAdapter;
@@ -54,13 +54,13 @@ namespace Ligue1.Activities
         /// Chargement des derniers résultats
         /// </summary>
         /// <returns>Liset de <seealso cref="Fixture"/></returns>
-        private async Task<List<Fixture>> LoadLastResults(bool debug)
+        private async Task<List<Fixture>> LoadLastFixtures(bool debug)
         {
             Log.Debug(TAG, "LoadLastResults");
 
             List<Fixture> result = new List<Fixture>();
 
-            // récupération des résultats avec web-service
+            // récupération des derniers fixtures
             if (debug)
             {
                 result = serviceMock.GetFixtures();

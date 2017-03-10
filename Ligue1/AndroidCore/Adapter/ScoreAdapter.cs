@@ -71,6 +71,17 @@ public class ScoreAdapter : BaseAdapter
         holder.GoalsHomeTeam.Text = tempScoreItem.Score.GoalsHomeTeam;
         holder.GoalsAwayTeam.Text = tempScoreItem.Score.GoalsAwayTeam;
 
+        // TODO Gestion couleur item ligne paire/impaire
+        //if (position == 0)
+        //{
+        //    view.setBackgroundResource(R.drawable.bg_list_even);
+        //}
+        //else if (position == 1)
+        //{
+        //    view.setBackgroundResource(R.drawable.bg_list_odd);
+        //}
+        //else..
+
         return view;
     }
 
