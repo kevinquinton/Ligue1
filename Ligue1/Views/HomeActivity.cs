@@ -43,7 +43,7 @@ namespace Ligue1.Activities
             service = CompetitionFixturesService.CompetitionFixturesServiceSession(httpClient);
             serviceMock = CompetitionFixturesServiceMocker.CompetitionFixturesServiceMockerSession(this);
 
-            bool debug = false;
+            bool debug = true;
             fixtures = await LoadLastResults(debug);
 
             scoreAdapter = new ScoreAdapter(this, fixtures);

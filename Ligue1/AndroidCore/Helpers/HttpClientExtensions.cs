@@ -20,25 +20,9 @@ namespace Ligue1.AndroidCore.Helpers
 
             client.Timeout = TimeSpan.FromSeconds(30);
 
-            //var response = await client.SendAsync(httpRequest);
+            var response = await client.SendAsync(httpRequest);
 
-            //var jsonString = await response.Content.ReadAsStringAsync();
-
-            //var result = JsonConvert.DeserializeObject<T>(jsonString);
-
-            //return result;
-            var response = new HttpResponseMessage();
-            var jsonString = "";
-
-            Console.WriteLine("avant response");
-            response = await client.SendAsync(httpRequest);
-            Console.WriteLine("après response");
-            jsonString = await response.Content.ReadAsStringAsync();
-            Console.WriteLine("après jsonstring");
- 
-            response = await client.SendAsync(httpRequest);
-
-            jsonString = await response.Content.ReadAsStringAsync();
+            var jsonString = await response.Content.ReadAsStringAsync();
 
             var result = JsonConvert.DeserializeObject<T>(jsonString);
 
