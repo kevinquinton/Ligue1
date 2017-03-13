@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using Ligue1.AndroidCore.Helpers;
 using Android.Util;
 
-namespace Ligue1.AndroidCore.Services.Impl
+namespace Ligue1.AndroidCore.Services.CompetitionService.Impl
 {
-    class CompetitionFixturesService : ICompetitionFixturesService
+    public class CompetitionFixturesService : ICompetitionFixturesService
     {
         /// <summary>
         /// Client Http
@@ -51,13 +51,13 @@ namespace Ligue1.AndroidCore.Services.Impl
         /// Récupère les fixtures correspondant à une compétition
         /// </summary>
         /// <param name="competitionId">identifiant de la compétition</param>
+        /// <param name="matchDay">numéro de la journée</param>
         /// <returns>Liste de fixtures</returns>
-        public async Task<List<Fixture>> GetFixturesAsync(string competitionId)
+        public async Task<List<Fixture>> GetFixturesAsync(string competitionId, int matchDay)
         {
             Log.Debug(TAG, "GetFixturesAsync");
 
-            // TODO Rendre paramétrable numéro de la journée + remonter numéro match
-            var url = string.Format(GetUrl(), competitionId) + "?matchday=24";
+            var url = string.Format(GetUrl(), competitionId, matchDay);
 
             var result = await HttpClientExtensions.GetAsync<FixturesRootObject>(_httpClient, url);
 
@@ -70,7 +70,7 @@ namespace Ligue1.AndroidCore.Services.Impl
         /// <returns>Url</returns>
         public string GetUrl()
         {
-            return Constants.Url.URL_WEB_SERVICE_COMPETITIONS_FIXTURES;
+            return Constants.Url.URL_WEB_SERVICE_COMPETITIONS_FIXTURES_MATCH_DAY;
         }
 
     }

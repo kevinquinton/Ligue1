@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-/// <summary>
-/// Représente une rencontre de championnat
-/// </summary>
 namespace Ligue1.AndroidCore.Entities
 {
+    /// <summary>
+    /// Représente une rencontre de championnat
+    /// </summary>
     public class Fixture
     {
         /// <summary>

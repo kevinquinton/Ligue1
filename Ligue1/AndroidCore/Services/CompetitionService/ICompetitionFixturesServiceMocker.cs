@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Ligue1.AndroidCore.Entities;
 
-namespace Ligue1.AndroidCore.Services
+namespace Ligue1.AndroidCore.Services.CompetitionService
 {
     interface ICompetitionFixturesServiceMocker
     {

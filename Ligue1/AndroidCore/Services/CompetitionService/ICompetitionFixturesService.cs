@@ -2,7 +2,7 @@ using Ligue1.AndroidCore.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Ligue1.AndroidCore.Services
+namespace Ligue1.AndroidCore.Services.CompetitionService
 {
     interface ICompetitionFixturesService : IService
     {
@@ -10,7 +10,8 @@ namespace Ligue1.AndroidCore.Services
         /// Récupérer la liste de matchs d'une journée
         /// </summary>
         /// <param name="competitionId">Identifiant de la compétition</param>
+        /// <param name="matchDay">numéro de la journée</param>
         /// <returns>Liste de <seealso cref="Fixture" /></returns>
-        Task<List<Fixture>> GetFixturesAsync(string competitionId);
+        Task<List<Fixture>> GetFixturesAsync(string competitionId, int matchDay);
     }
 }

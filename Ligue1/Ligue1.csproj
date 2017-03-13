@@ -130,8 +130,15 @@
   <ItemGroup>
     <Compile Include="AndroidCore\Adapter\ScoreAdapter.cs" />
     <Compile Include="AndroidCore\Constants\Url.cs" />
-    <Compile Include="AndroidCore\Services\ICompetitionFixturesServiceMocker.cs" />
-    <Compile Include="AndroidCore\Services\Mock\CompetitionFixturesServiceMocker.cs" />
+    <Compile Include="AndroidCore\Entities\Competition.cs" />
+    <Compile Include="AndroidCore\Entities\CompetitionRootObject.cs" />
+    <Compile Include="AndroidCore\Entities\LeagueTable.cs" />
+    <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionFixturesServiceMocker.cs" />
+    <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionService.cs" />
+    <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionServiceMocker.cs" />
+    <Compile Include="AndroidCore\Services\CompetitionService\Impl\CompetitionService.cs" />
+    <Compile Include="AndroidCore\Services\CompetitionService\Mock\CompetitionFixturesServiceMocker.cs" />
+    <Compile Include="AndroidCore\Services\CompetitionService\Mock\CompetitionServiceMocker.cs" />
     <Compile Include="Views\SplashScreenActivity.cs" />
     <Compile Include="Views\HomeActivity.cs" />
     <Compile Include="AndroidCore\Constants\Constants.cs" />
@@ -139,9 +146,9 @@
     <Compile Include="AndroidCore\Entities\FixturesRootObject.cs" />
     <Compile Include="AndroidCore\Entities\HalfTime.cs" />
     <Compile Include="AndroidCore\Entities\Score.cs" />
-    <Compile Include="AndroidCore\Services\ICompetitionFixturesService.cs" />
+    <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionFixturesService.cs" />
     <Compile Include="AndroidCore\Services\IService.cs" />
-    <Compile Include="AndroidCore\Services\Impl\CompetitionFixturesService.cs" />
+    <Compile Include="AndroidCore\Services\CompetitionService\Impl\CompetitionFixturesService.cs" />
     <Compile Include="AndroidCore\Entities\Fixture.cs" />
     <Compile Include="AndroidCore\Entities\Team.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -150,6 +157,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <AndroidAsset Include="Assets\fixtures.json" />
+    <AndroidAsset Include="Assets\competition.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />

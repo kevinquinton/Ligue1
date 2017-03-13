@@ -7,7 +7,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Android.Util;
 
-namespace Ligue1.AndroidCore.Services
+namespace Ligue1.AndroidCore.Services.CompetitionService
 {
     /// <summary>
     /// Mock du service <seealso cref="CompetitionFixturesService"/>
@@ -15,11 +15,19 @@ namespace Ligue1.AndroidCore.Services
     /// </summary>
     public class CompetitionFixturesServiceMocker : ICompetitionFixturesServiceMocker
     {
-
+        /// <summary>
+        /// Activity courrante
+        /// </summary>
         private Activity _activity;
 
+        /// <summary>
+        /// Singleton
+        /// </summary>
         private static CompetitionFixturesServiceMocker _instance;
 
+        /// <summary>
+        /// Tag pour logger
+        /// </summary>
         private const string TAG = "CompetitionFixturesServicesMocker";
 
         /// <summary>

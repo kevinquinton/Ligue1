@@ -3,12 +3,12 @@ using Android.App;
 using Android.OS;
 using Android.Widget;
 using Ligue1.AndroidCore.Entities;
-using Ligue1.AndroidCore.Services.Impl;
 using System.Net.Http;
-using Ligue1.AndroidCore.Services;
 using System.Threading.Tasks;
 using Android.Util;
 using Ligue1.AndroidCore.Constants;
+using Ligue1.AndroidCore.Services.CompetitionService;
+using Ligue1.AndroidCore.Services.CompetitionService.Impl;
 
 namespace Ligue1.Activities
 {
@@ -22,8 +22,9 @@ namespace Ligue1.Activities
         private ListView scoresList;
         private ScoreAdapter scoreAdapter;
         private List<Fixture> fixtures;
-        private ICompetitionFixturesService service;
-        private ICompetitionFixturesServiceMocker serviceMock;
+        private ICompetitionFixturesService competitionFixturesService;
+        private ICompetitionFixturesServiceMocker competitionFixturesServiceMock;
+        private ICompetitionService competitionService; 
         private HttpClient httpClient;
         private const string TAG = "HomeActivity";
 
@@ -40,8 +41,9 @@ namespace Ligue1.Activities
             }
 
             // instanciation du service responsable des fixtures
-            service = CompetitionFixturesService.CompetitionFixturesServiceSession(httpClient);
-            serviceMock = CompetitionFixturesServiceMocker.CompetitionFixturesServiceMockerSession(this);
+            competitionFixturesService = CompetitionFixturesService.CompetitionFixturesServiceSession(httpClient);
+            competitionFixturesServiceMock = CompetitionFixturesServiceMocker.CompetitionFixturesServiceMockerSession(this);
+            competitionService = CompetitionService.CompetitionServiceSession(httpClient);
 
             bool debug = true;
             fixtures = await LoadLastFixtures(debug);
@@ -56,18 +58,23 @@ namespace Ligue1.Activities
         /// <returns>Liset de <seealso cref="Fixture"/></returns>
         private async Task<List<Fixture>> LoadLastFixtures(bool debug)
         {
-            Log.Debug(TAG, "LoadLastResults");
+            Log.Debug(TAG, "LoadLastResults");        
 
-            List<Fixture> result = new List<Fixture>();
-
-            // récupération des derniers fixtures
+            List<Fixture> result = new List<Fixture>();           
             if (debug)
             {
-                result = serviceMock.GetFixtures();
+                // récupération des derniers fixtures
+                result = competitionFixturesServiceMock.GetFixtures();
             }
             else
             {
-                var fixtures = await service.GetFixturesAsync(Url.COMPETITION_ID_TEST);
+                // récupération du numéro de la dernière journée de championnat joué
+                var competition = await competitionService.GetCompetition(Url.LIGUE_1_COMPETITION_ID);
+                string idCompetition = competition.Id;
+                int matchDay = competition.CurrentMatchday;
+
+                // récupération des derniers fixtures
+                var fixtures = await competitionFixturesService.GetFixturesAsync(idCompetition, matchDay);
                 result = fixtures;
             }
 
