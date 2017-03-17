@@ -9,7 +9,6 @@ using Android.Util;
 using Ligue1.AndroidCore.Constants;
 using Ligue1.AndroidCore.Services.CompetitionService;
 using Ligue1.AndroidCore.Services.CompetitionService.Impl;
-using Ligue1.AndroidCore.Services.CompetitionService.Mock;
 
 namespace Ligue1.Activities
 {
@@ -87,7 +86,7 @@ namespace Ligue1.Activities
         /// <summary>
         /// Chargement des derniers résultats
         /// </summary>
-        /// <returns>Liset de <seealso cref="Fixture"/></returns>
+        /// <returns>Liste de <seealso cref="Fixture"/></returns>
         private async Task<List<Fixture>> LoadLastFixtures(bool debug)
         {
             Log.Debug(TAG, "LoadLastResults");        

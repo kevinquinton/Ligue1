@@ -135,10 +135,8 @@
     <Compile Include="AndroidCore\Entities\LeagueTable.cs" />
     <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionFixturesServiceMocker.cs" />
     <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionService.cs" />
-    <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionServiceMocker.cs" />
     <Compile Include="AndroidCore\Services\CompetitionService\Impl\CompetitionService.cs" />
     <Compile Include="AndroidCore\Services\CompetitionService\Mock\CompetitionFixturesServiceMocker.cs" />
-    <Compile Include="AndroidCore\Services\CompetitionService\Mock\CompetitionServiceMocker.cs" />
     <Compile Include="Views\SplashScreenActivity.cs" />
     <Compile Include="Views\HomeActivity.cs" />
     <Compile Include="AndroidCore\Constants\Constants.cs" />
@@ -205,7 +203,9 @@
     <AndroidResource Include="Resources\drawable-xhdpi\img_logo_ligue1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\score_item.xml" />
+    <AndroidResource Include="Resources\layout\score_item.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\dimensions.xml" />
