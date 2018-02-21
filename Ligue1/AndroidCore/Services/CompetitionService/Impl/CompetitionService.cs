@@ -56,7 +56,7 @@ namespace Ligue1.AndroidCore.Services.CompetitionService.Impl
         {
             Log.Debug(TAG, "GetFixturesAsync");
 
-            var url = string.Format(GetUrl(), id);
+            string url = string.Format(GetUrl(), id);
 
             var result = await HttpClientExtensions.GetAsync<CompetitionRootObject>(_httpClient, url);
 

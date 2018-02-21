@@ -7,13 +7,13 @@ using System.IO;
 using Newtonsoft.Json;
 using Android.Util;
 
-namespace Ligue1.AndroidCore.Services.CompetitionService
+namespace Ligue1.AndroidCore.Services.FixtureService
 {
     /// <summary>
-    /// Mock du service <seealso cref="CompetitionFixturesService"/>
+    /// Mock du service <seealso cref="FixtureService"/>
     /// pour debug sans connexion aux web-services
     /// </summary>
-    public class CompetitionFixturesServiceMocker : ICompetitionFixturesServiceMocker
+    public class FixtureServiceMocker : IFixtureServiceMocker
     {
         /// <summary>
         /// Activity courrante
@@ -23,7 +23,7 @@ namespace Ligue1.AndroidCore.Services.CompetitionService
         /// <summary>
         /// Singleton
         /// </summary>
-        private static CompetitionFixturesServiceMocker _instance;
+        private static FixtureServiceMocker _instance;
 
         /// <summary>
         /// Tag pour logger
@@ -34,7 +34,7 @@ namespace Ligue1.AndroidCore.Services.CompetitionService
         /// Constructeur
         /// </summary>
         /// <param name="activity"></param>
-        private CompetitionFixturesServiceMocker(Activity activity)
+        private FixtureServiceMocker(Activity activity)
         {
             _activity = activity;
         }
@@ -44,11 +44,11 @@ namespace Ligue1.AndroidCore.Services.CompetitionService
         /// </summary>
         /// <param name="activity"></param>
         /// <returns></returns>
-        public static CompetitionFixturesServiceMocker CompetitionFixturesServiceMockerSession(Activity activity)
+        public static FixtureServiceMocker FixtureServiceMockerSession(Activity activity)
         {
             if (_instance == null)
             {
-                _instance = new CompetitionFixturesServiceMocker(activity);
+                _instance = new FixtureServiceMocker(activity);
             }
             return _instance;
         }

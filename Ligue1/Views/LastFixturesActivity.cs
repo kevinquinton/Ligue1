@@ -9,15 +9,17 @@ using Android.Util;
 using Ligue1.AndroidCore.Constants;
 using Ligue1.AndroidCore.Services.CompetitionService;
 using Ligue1.AndroidCore.Services.CompetitionService.Impl;
+using Android.Content.PM;
+using Ligue1.AndroidCore.Services.FixtureService;
+using Ligue1.AndroidCore.Services.FixtureService.Impl;
 
 namespace Ligue1.Activities
 {
     /// <summary>
     /// Activité de la page d'accueil
     /// </summary>
-    //[Activity(Label = "@string/ApplicationName")]
-    [Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/img_logo_ligue1")] // TODO A enlever
-    public class HomeActivity : Activity
+    [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/img_logo_ligue1", ConfigurationChanges = ConfigChanges.Locale)]
+    public class LastFixturesActivity : Activity
     {
         /// <summary>
         /// 
@@ -37,12 +39,12 @@ namespace Ligue1.Activities
         /// <summary>
         /// Service des résultats
         /// </summary>
-        private ICompetitionFixturesService competitionFixturesService;
+        private IFixtureService fixtureService;
 
         /// <summary>
         /// Mock du service des résultats
         /// </summary>
-        private ICompetitionFixturesServiceMocker competitionFixturesServiceMock;
+        private IFixtureServiceMocker fixtureServiceMock;
 
         /// <summary>
         /// Service des compétitions
@@ -57,7 +59,7 @@ namespace Ligue1.Activities
         /// <summary>
         /// Tag pour logger
         /// </summary>
-        private const string TAG = "HomeActivity";
+        private const string TAG = "LastFixturesActivity";
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -72,11 +74,11 @@ namespace Ligue1.Activities
             }
 
             // instanciation du service responsable des fixtures
-            competitionFixturesService = CompetitionFixturesService.CompetitionFixturesServiceSession(httpClient);
-            competitionFixturesServiceMock = CompetitionFixturesServiceMocker.CompetitionFixturesServiceMockerSession(this);
+            fixtureService = FixtureService.CompetitionFixturesServiceSession(httpClient);
+            fixtureServiceMock = FixtureServiceMocker.FixtureServiceMockerSession(this);
             competitionService = CompetitionService.CompetitionServiceSession(httpClient);
 
-            bool debug = false;
+            bool debug = true; // TODO A enlever
             fixtures = await LoadLastFixtures(debug);
 
             scoreAdapter = new ScoreAdapter(this, fixtures);
@@ -87,6 +89,7 @@ namespace Ligue1.Activities
         /// Chargement des derniers résultats
         /// </summary>
         /// <returns>Liste de <seealso cref="Fixture"/></returns>
+        /// TODO Externaliser cette méthode de l'activity
         private async Task<List<Fixture>> LoadLastFixtures(bool debug)
         {
             Log.Debug(TAG, "LoadLastResults");        
@@ -95,17 +98,18 @@ namespace Ligue1.Activities
             if (debug)
             {
                 // récupération des derniers fixtures
-                result = competitionFixturesServiceMock.GetFixtures();
+                result = fixtureServiceMock.GetFixtures();
             }
             else
             {
                 // récupération du numéro de la dernière journée de championnat joué
+
                 var competition = await competitionService.GetCompetition(Url.LIGUE_1_COMPETITION_ID);
                 var idCompetition = competition.Id;
                 var matchDay = competition.CurrentMatchday;
 
                 // récupération des derniers fixtures
-                var fixtures = await competitionFixturesService.GetFixturesAsync(idCompetition, matchDay);
+                var fixtures = await fixtureService.GetFixturesAsync(idCompetition, matchDay);
                 result = fixtures;
             }
 

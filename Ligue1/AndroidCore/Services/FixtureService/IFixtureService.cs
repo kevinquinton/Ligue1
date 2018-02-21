@@ -2,9 +2,9 @@ using Ligue1.AndroidCore.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Ligue1.AndroidCore.Services.CompetitionService
+namespace Ligue1.AndroidCore.Services.FixtureService
 {
-    interface ICompetitionFixturesService : IService
+    interface IFixtureService : IService
     {
         /// <summary>
         /// Récupérer la liste de matchs d'une journée

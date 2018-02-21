@@ -133,20 +133,20 @@
     <Compile Include="AndroidCore\Entities\Competition.cs" />
     <Compile Include="AndroidCore\Entities\CompetitionRootObject.cs" />
     <Compile Include="AndroidCore\Entities\LeagueTable.cs" />
-    <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionFixturesServiceMocker.cs" />
+    <Compile Include="AndroidCore\Services\FixtureService\IFixtureServiceMocker.cs" />
     <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionService.cs" />
     <Compile Include="AndroidCore\Services\CompetitionService\Impl\CompetitionService.cs" />
-    <Compile Include="AndroidCore\Services\CompetitionService\Mock\CompetitionFixturesServiceMocker.cs" />
+    <Compile Include="AndroidCore\Services\FixtureService\Mock\FixtureServiceMocker.cs" />
     <Compile Include="Views\SplashScreenActivity.cs" />
-    <Compile Include="Views\HomeActivity.cs" />
+    <Compile Include="Views\LastFixturesActivity.cs" />
     <Compile Include="AndroidCore\Constants\Constants.cs" />
     <Compile Include="AndroidCore\Helpers\HttpClientExtensions.cs" />
     <Compile Include="AndroidCore\Entities\FixturesRootObject.cs" />
     <Compile Include="AndroidCore\Entities\HalfTime.cs" />
     <Compile Include="AndroidCore\Entities\Score.cs" />
-    <Compile Include="AndroidCore\Services\CompetitionService\ICompetitionFixturesService.cs" />
+    <Compile Include="AndroidCore\Services\FixtureService\IFixtureService.cs" />
     <Compile Include="AndroidCore\Services\IService.cs" />
-    <Compile Include="AndroidCore\Services\CompetitionService\Impl\CompetitionFixturesService.cs" />
+    <Compile Include="AndroidCore\Services\FixtureService\Impl\FixtureService.cs" />
     <Compile Include="AndroidCore\Entities\Fixture.cs" />
     <Compile Include="AndroidCore\Entities\Team.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -212,6 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-en\strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

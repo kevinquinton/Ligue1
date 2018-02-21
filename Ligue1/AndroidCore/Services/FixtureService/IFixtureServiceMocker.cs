@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using Ligue1.AndroidCore.Entities;
 
-namespace Ligue1.AndroidCore.Services.CompetitionService
+namespace Ligue1.AndroidCore.Services.FixtureService
 {
-    interface ICompetitionFixturesServiceMocker
+    interface IFixtureServiceMocker
     {
         /// <summary>
         /// Récupère les fixtures

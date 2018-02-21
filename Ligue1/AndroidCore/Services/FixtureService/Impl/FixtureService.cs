@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using Ligue1.AndroidCore.Helpers;
 using Android.Util;
 
-namespace Ligue1.AndroidCore.Services.CompetitionService.Impl
+namespace Ligue1.AndroidCore.Services.FixtureService.Impl
 {
-    public class CompetitionFixturesService : ICompetitionFixturesService
+    public class FixtureService : IFixtureService
     {
         /// <summary>
         /// Client Http
@@ -17,7 +17,7 @@ namespace Ligue1.AndroidCore.Services.CompetitionService.Impl
         /// <summary>
         /// Singleton
         /// </summary>
-        private static CompetitionFixturesService _instance;
+        private static FixtureService _instance;
 
         /// <summary>
         /// Tag pour logger
@@ -28,7 +28,7 @@ namespace Ligue1.AndroidCore.Services.CompetitionService.Impl
         /// Constructeur
         /// </summary>
         /// <param name="httpClient">Client Http</param>
-        private CompetitionFixturesService(HttpClient httpClient)
+        private FixtureService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
@@ -38,11 +38,11 @@ namespace Ligue1.AndroidCore.Services.CompetitionService.Impl
         /// </summary>
         /// <param name="httpClient">Client Http</param>
         /// <returns>Unique instanciation</returns>
-        public static CompetitionFixturesService CompetitionFixturesServiceSession(HttpClient httpClient)
+        public static FixtureService CompetitionFixturesServiceSession(HttpClient httpClient)
         {
             if (_instance == null)
             {
-                _instance = new CompetitionFixturesService(httpClient);
+                _instance = new FixtureService(httpClient);
             }
             return _instance;
         }
@@ -57,7 +57,7 @@ namespace Ligue1.AndroidCore.Services.CompetitionService.Impl
         {
             Log.Debug(TAG, "GetFixturesAsync");
 
-            var url = string.Format(GetUrl(), competitionId, matchDay);
+            string url = string.Format(GetUrl(), competitionId, matchDay);
 
             var result = await HttpClientExtensions.GetAsync<FixturesRootObject>(_httpClient, url);
 
