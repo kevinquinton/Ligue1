@@ -26,6 +26,6 @@ namespace Ligue1.AndroidCore.Constants
         public const string URL_WEB_SERVICE_COMPETITIONS_FIXTURES_MATCH_DAY = URL_WEB_SERVICE + "competitions/{0}/fixtures?matchday={1}";
 
         // TODO TO DELETE
-        public const string LIGUE_1_COMPETITION_ID = "434";
+        public const string LIGUE_1_COMPETITION_ID = "450";
     }
 }

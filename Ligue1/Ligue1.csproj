@@ -13,7 +13,9 @@
     <AssemblyName>Ligue1</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
@@ -159,10 +161,13 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\home.axml">
+    <AndroidResource Include="Resources\layout\last_fixtures.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\splash_screen.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fixture_item.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -174,9 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AndroidCore\ViewModels\" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\values\theme.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\img_pelouse.jpg" />
@@ -201,11 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\img_logo_ligue1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\score_item.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\dimensions.xml" />

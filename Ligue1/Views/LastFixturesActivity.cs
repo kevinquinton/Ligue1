@@ -65,7 +65,7 @@ namespace Ligue1.Activities
         {
             base.OnCreate(savedInstanceState);
 
-            SetContentView(Resource.Layout.home);
+            SetContentView(Resource.Layout.last_fixtures);
             scoresList = (ListView)FindViewById(Resource.Id.scoreView);
 
             if (httpClient == null)
@@ -103,12 +103,11 @@ namespace Ligue1.Activities
             else
             {
                 // récupération du numéro de la dernière journée de championnat joué
-
                 var competition = await competitionService.GetCompetition(Url.LIGUE_1_COMPETITION_ID);
                 var idCompetition = competition.Id;
                 var matchDay = competition.CurrentMatchday;
 
-                // récupération des derniers fixtures
+                // récupération des derniers résultats
                 var fixtures = await fixtureService.GetFixturesAsync(idCompetition, matchDay);
                 result = fixtures;
             }

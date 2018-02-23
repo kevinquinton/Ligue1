@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Ligue1.Ligue1" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="24" />
+	<uses-sdk android:minSdkVersion="25" android:targetSdkVersion="25" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="Ligue1" android:icon="@drawable/img_logo_ligue1"></application>
+	<application android:label="Ligue1" android:icon="@drawable/img_logo_ligue1" android:theme="@android:style/Theme.Holo.Light.DarkActionBar"></application>
+  
 </manifest>

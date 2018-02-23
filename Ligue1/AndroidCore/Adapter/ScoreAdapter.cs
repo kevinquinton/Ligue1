@@ -48,13 +48,15 @@ public class ScoreAdapter : BaseAdapter
 
         if (view == null)
         {
-            view = _activity.LayoutInflater.Inflate(Resource.Layout.score_item, null);
+            view = _activity.LayoutInflater.Inflate(Resource.Layout.fixture_item, null);
 
-            holder = new ScoreViewHolder();
-            holder.HomeTeamName = (TextView) view.FindViewById(Resource.Id.homeTeamNameTxt);
-            holder.GoalsHomeTeam = (TextView) view.FindViewById(Resource.Id.goalsHomeTeamTxt);
-            holder.AwayTeamName = (TextView)view.FindViewById(Resource.Id.awayTeamNameTxt);
-            holder.GoalsAwayTeam = (TextView)view.FindViewById(Resource.Id.goalsAwayTeamTxt);
+            holder = new ScoreViewHolder
+            {
+                HomeTeamName = (TextView)view.FindViewById(Resource.Id.homeTeamNameTxt),
+                GoalsHomeTeam = (TextView)view.FindViewById(Resource.Id.goalsHomeTeamTxt),
+                AwayTeamName = (TextView)view.FindViewById(Resource.Id.awayTeamNameTxt),
+                GoalsAwayTeam = (TextView)view.FindViewById(Resource.Id.goalsAwayTeamTxt)
+            };
 
             view.Tag = holder;
         }

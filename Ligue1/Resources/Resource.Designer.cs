@@ -784,32 +784,32 @@ namespace Ligue1
 		public partial class Color
 		{
 			
+			// aapt resource value: 0x7f0a003a
+			public const int abc_background_cache_hint_selector_material_dark = 2131361850;
+			
 			// aapt resource value: 0x7f0a003b
-			public const int abc_background_cache_hint_selector_material_dark = 2131361851;
+			public const int abc_background_cache_hint_selector_material_light = 2131361851;
 			
 			// aapt resource value: 0x7f0a003c
-			public const int abc_background_cache_hint_selector_material_light = 2131361852;
-			
-			// aapt resource value: 0x7f0a003d
-			public const int abc_color_highlight_material = 2131361853;
+			public const int abc_color_highlight_material = 2131361852;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int abc_input_method_navigation_guard = 2131361792;
 			
+			// aapt resource value: 0x7f0a003d
+			public const int abc_primary_text_disable_only_material_dark = 2131361853;
+			
 			// aapt resource value: 0x7f0a003e
-			public const int abc_primary_text_disable_only_material_dark = 2131361854;
+			public const int abc_primary_text_disable_only_material_light = 2131361854;
 			
 			// aapt resource value: 0x7f0a003f
-			public const int abc_primary_text_disable_only_material_light = 2131361855;
+			public const int abc_primary_text_material_dark = 2131361855;
 			
 			// aapt resource value: 0x7f0a0040
-			public const int abc_primary_text_material_dark = 2131361856;
+			public const int abc_primary_text_material_light = 2131361856;
 			
 			// aapt resource value: 0x7f0a0041
-			public const int abc_primary_text_material_light = 2131361857;
-			
-			// aapt resource value: 0x7f0a0042
-			public const int abc_search_url_text = 2131361858;
+			public const int abc_search_url_text = 2131361857;
 			
 			// aapt resource value: 0x7f0a0001
 			public const int abc_search_url_text_normal = 2131361793;
@@ -820,11 +820,11 @@ namespace Ligue1
 			// aapt resource value: 0x7f0a0003
 			public const int abc_search_url_text_selected = 2131361795;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int abc_secondary_text_material_dark = 2131361859;
+			// aapt resource value: 0x7f0a0042
+			public const int abc_secondary_text_material_dark = 2131361858;
 			
-			// aapt resource value: 0x7f0a0044
-			public const int abc_secondary_text_material_light = 2131361860;
+			// aapt resource value: 0x7f0a0043
+			public const int abc_secondary_text_material_light = 2131361859;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int accent_material_dark = 2131361796;
@@ -982,20 +982,17 @@ namespace Ligue1
 			// aapt resource value: 0x7f0a0037
 			public const int switch_thumb_disabled_material_light = 2131361847;
 			
-			// aapt resource value: 0x7f0a0045
-			public const int switch_thumb_material_dark = 2131361861;
+			// aapt resource value: 0x7f0a0044
+			public const int switch_thumb_material_dark = 2131361860;
 			
-			// aapt resource value: 0x7f0a0046
-			public const int switch_thumb_material_light = 2131361862;
+			// aapt resource value: 0x7f0a0045
+			public const int switch_thumb_material_light = 2131361861;
 			
 			// aapt resource value: 0x7f0a0038
 			public const int switch_thumb_normal_material_dark = 2131361848;
 			
 			// aapt resource value: 0x7f0a0039
 			public const int switch_thumb_normal_material_light = 2131361849;
-			
-			// aapt resource value: 0x7f0a003a
-			public const int theme_devicedefault_background = 2131361850;
 			
 			static Color()
 			{
@@ -1486,8 +1483,8 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b000a
 			public const int MvxBindingTagUnique = 2131427338;
 			
-			// aapt resource value: 0x7f0b0054
-			public const int action0 = 2131427412;
+			// aapt resource value: 0x7f0b005a
+			public const int action0 = 2131427418;
 			
 			// aapt resource value: 0x7f0b0043
 			public const int action_bar = 2131427395;
@@ -1513,8 +1510,8 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b0044
 			public const int action_context_bar = 2131427396;
 			
-			// aapt resource value: 0x7f0b0058
-			public const int action_divider = 2131427416;
+			// aapt resource value: 0x7f0b005e
+			public const int action_divider = 2131427422;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -1540,8 +1537,8 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b001d
 			public const int always = 2131427357;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int awayTeamNameTxt = 2131427430;
+			// aapt resource value: 0x7f0b0057
+			public const int awayTeamNameTxt = 2131427415;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int beginning = 2131427354;
@@ -1549,14 +1546,14 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b002d
 			public const int buttonPanel = 2131427373;
 			
-			// aapt resource value: 0x7f0b0055
-			public const int cancel_action = 2131427413;
+			// aapt resource value: 0x7f0b005b
+			public const int cancel_action = 2131427419;
 			
 			// aapt resource value: 0x7f0b003b
 			public const int checkbox = 2131427387;
 			
-			// aapt resource value: 0x7f0b005b
-			public const int chronometer = 2131427419;
+			// aapt resource value: 0x7f0b0061
+			public const int chronometer = 2131427425;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int collapseActionView = 2131427358;
@@ -1576,8 +1573,8 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b0029
 			public const int default_activity_button = 2131427369;
 			
-			// aapt resource value: 0x7f0b0052
-			public const int derniersResultatsLabel = 2131427410;
+			// aapt resource value: 0x7f0b0058
+			public const int derniersResultatsLabel = 2131427416;
 			
 			// aapt resource value: 0x7f0b000e
 			public const int disableHome = 2131427342;
@@ -1588,8 +1585,8 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b001b
 			public const int end = 2131427355;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int end_padder = 2131427424;
+			// aapt resource value: 0x7f0b0066
+			public const int end_padder = 2131427430;
 			
 			// aapt resource value: 0x7f0b0027
 			public const int expand_activities_button = 2131427367;
@@ -1597,11 +1594,11 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b003a
 			public const int expanded_menu = 2131427386;
 			
-			// aapt resource value: 0x7f0b0065
-			public const int goalsAwayTeamTxt = 2131427429;
+			// aapt resource value: 0x7f0b0056
+			public const int goalsAwayTeamTxt = 2131427414;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int goalsHomeTeamTxt = 2131427427;
+			// aapt resource value: 0x7f0b0054
+			public const int goalsHomeTeamTxt = 2131427412;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int home = 2131427332;
@@ -1609,8 +1606,8 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b000f
 			public const int homeAsUp = 2131427343;
 			
-			// aapt resource value: 0x7f0b0062
-			public const int homeTeamNameTxt = 2131427426;
+			// aapt resource value: 0x7f0b0052
+			public const int homeTeamNameTxt = 2131427410;
 			
 			// aapt resource value: 0x7f0b002b
 			public const int icon = 2131427371;
@@ -1621,14 +1618,17 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b0028
 			public const int image = 2131427368;
 			
+			// aapt resource value: 0x7f0b0065
+			public const int info = 2131427429;
+			
 			// aapt resource value: 0x7f0b005f
-			public const int info = 2131427423;
+			public const int line1 = 2131427423;
 			
-			// aapt resource value: 0x7f0b0059
-			public const int line1 = 2131427417;
+			// aapt resource value: 0x7f0b0063
+			public const int line3 = 2131427427;
 			
-			// aapt resource value: 0x7f0b005d
-			public const int line3 = 2131427421;
+			// aapt resource value: 0x7f0b0053
+			public const int linearLayout2 = 2131427411;
 			
 			// aapt resource value: 0x7f0b000b
 			public const int listMode = 2131427339;
@@ -1639,8 +1639,8 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b0067
 			public const int logoLigue1View = 2131427431;
 			
-			// aapt resource value: 0x7f0b0057
-			public const int media_actions = 2131427415;
+			// aapt resource value: 0x7f0b005d
+			public const int media_actions = 2131427421;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int middle = 2131427356;
@@ -1669,14 +1669,11 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b003d
 			public const int radio = 2131427389;
 			
-			// aapt resource value: 0x7f0b0061
-			public const int scoreListLayout = 2131427425;
+			// aapt resource value: 0x7f0b0055
+			public const int scoreSeparatorTxt = 2131427413;
 			
-			// aapt resource value: 0x7f0b0064
-			public const int scoreSeparatorTxt = 2131427428;
-			
-			// aapt resource value: 0x7f0b0053
-			public const int scoreView = 2131427411;
+			// aapt resource value: 0x7f0b0059
+			public const int scoreView = 2131427417;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int screen = 2131427350;
@@ -1750,8 +1747,8 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b0019
 			public const int src_over = 2131427353;
 			
-			// aapt resource value: 0x7f0b0056
-			public const int status_bar_latest_event_content = 2131427414;
+			// aapt resource value: 0x7f0b005c
+			public const int status_bar_latest_event_content = 2131427420;
 			
 			// aapt resource value: 0x7f0b004e
 			public const int submit_area = 2131427406;
@@ -1759,17 +1756,17 @@ namespace Ligue1
 			// aapt resource value: 0x7f0b000d
 			public const int tabMode = 2131427341;
 			
-			// aapt resource value: 0x7f0b005e
-			public const int text = 2131427422;
+			// aapt resource value: 0x7f0b0064
+			public const int text = 2131427428;
 			
-			// aapt resource value: 0x7f0b005c
-			public const int text2 = 2131427420;
+			// aapt resource value: 0x7f0b0062
+			public const int text2 = 2131427426;
 			
 			// aapt resource value: 0x7f0b0036
 			public const int textSpacerNoButtons = 2131427382;
 			
-			// aapt resource value: 0x7f0b005a
-			public const int time = 2131427418;
+			// aapt resource value: 0x7f0b0060
+			public const int time = 2131427424;
 			
 			// aapt resource value: 0x7f0b002c
 			public const int title = 2131427372;
@@ -1909,34 +1906,34 @@ namespace Ligue1
 			public const int abc_select_dialog_material = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int home = 2130903065;
+			public const int fixture_item = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int notification_media_action = 2130903066;
+			public const int last_fixtures = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int notification_media_cancel_action = 2130903067;
+			public const int notification_media_action = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int notification_template_big_media = 2130903068;
+			public const int notification_media_cancel_action = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int notification_template_big_media_narrow = 2130903069;
+			public const int notification_template_big_media = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int notification_template_lines = 2130903070;
+			public const int notification_template_big_media_narrow = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int notification_template_media = 2130903071;
+			public const int notification_template_lines = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int notification_template_part_chronometer = 2130903072;
+			public const int notification_template_media = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int notification_template_part_time = 2130903073;
+			public const int notification_template_part_chronometer = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int score_item = 2130903074;
+			public const int notification_template_part_time = 2130903074;
 			
 			// aapt resource value: 0x7f030023
 			public const int select_dialog_item_material = 2130903075;
@@ -2752,9 +2749,6 @@ namespace Ligue1
 			
 			// aapt resource value: 0x7f0800e9
 			public const int Theme_AppCompat_NoActionBar = 2131230953;
-			
-			// aapt resource value: 0x7f080134
-			public const int Theme_Custom = 2131231028;
 			
 			// aapt resource value: 0x7f0800ea
 			public const int ThemeOverlay_AppCompat = 2131230954;
